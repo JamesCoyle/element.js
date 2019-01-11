@@ -1,0 +1,24 @@
+{
+	"name": "element-js",
+	"version": "1.0.0",
+	"description": "Easy DOM element creation.",
+	"main": "element.js",
+	"repository": "https://gitlab.com/jamescoyle95/element-js.git",
+	"author": "James Coyle <jamesrichardcoyle@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.2.2",
+		"@babel/preset-env": "^7.2.3",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-jest": "^23.6.0",
+		"jest": "^23.6.0"
+	},
+	"scripts": {
+		"test": "jest"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	}
+}
