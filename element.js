@@ -4,7 +4,17 @@ export default class El {
 	}
 
 	id(id) {
-		this.el.id = id
+		if (id == null) return this
+
+		switch (typeof id) {
+			case 'function':
+				return this.id(id())
+
+			case 'string':
+			case 'number':
+				this.el.id = id.toString()
+				break
+		}
 
 		return this
 	}
