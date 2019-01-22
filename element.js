@@ -1,5 +1,5 @@
 export default class El {
-	constructor(tag, options = null) {
+	constructor(tag = 'div', options = null) {
 		this.el = document.createElement(tag, options)
 	}
 
