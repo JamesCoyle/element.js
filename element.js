@@ -4,7 +4,7 @@ export default class El {
 	}
 
 	id(id) {
-		if (id == null) return this
+		if (id === null) return this
 
 		switch (typeof id) {
 			case 'function':
@@ -62,25 +62,22 @@ export default class El {
 		return this
 	}
 
-	content() {
-		switch (typeof content) {
-			case 'string':
-				this.el.innerHTML += content
-				break
-
-			case 'object':
-				if (content instanceof Node) this.el.appendChild(content)
-				else if (Array.isArray(content))
-					for (let i = 0; i < content.length; ++i) {
-						this.el = SetContent(el, content[i])
-					}
-				break
-		}
+	content(...content) {
+	    content.forEach((item)=> {
+    		switch (typeof item) {
+    		    case 'object':
+    				if (item instanceof Node) this.el.appendChild(item)
+    				else if (Array.isArray(item))
+    					this.content(item)
+    				break
+    				
+    			case 'string':
+    				this.el.appendChild(document.createTextNode(item))
+    				break
+    
+    		}
+	    })
 
 		return this
-	}
-
-	done() {
-		return this.el
 	}
 }
