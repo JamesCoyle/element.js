@@ -4,7 +4,7 @@ Easy DOM object creation.
 
 ## Usage
 
-```
+```js
 let textInput = new El('input')
     .attributes({
         type: 'text',
@@ -17,8 +17,8 @@ let textInput = new El('input')
     .events({
         input: (e) => console.log(e.target.value),
         focus: (e) => console.log("Element focused"),
-    }).el
-    
+    }).node
+
 document.body.appendChild(textInput)
 ```
 
@@ -28,22 +28,25 @@ document.body.appendChild(textInput)
 
 Sets the id of the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.id(id)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.id('submitButton')
 el.id(() => 'submitButton' + index))
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| id | String, Number | The value to set as the `id` attribute. |
-| id | Function | A funcition which will be called and passed back to `id()`. Warning: This could lead to infinite recursion if the function continuously returns functions. |
+
+| Argument | Type           | Description                                                                                                                                                |
+| -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id       | String, Number | The value to set as the `id` attribute.                                                                                                                    |
+| id       | Function       | A funcition which will be called and passed back to `id()`. Warning: This could lead to infinite recursion if the function continuously returns functions. |
 
 ---
 
@@ -51,22 +54,24 @@ el.id(() => 'submitButton' + index))
 
 Sets classes on the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.classes(...classes)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.classes('button')
 el.classes('large', 'red', 'button')
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| ...classes | String | A list of classes to add to the element |
 
+| Argument   | Type   | Description                             |
+| ---------- | ------ | --------------------------------------- |
+| ...classes | String | A list of classes to add to the element |
 
 ---
 
@@ -74,13 +79,15 @@ el.classes('large', 'red', 'button')
 
 Sets attributes on the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.attributes(attributes)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.attributes({
     name: 'username',
     placeholder: 'Username',
@@ -89,10 +96,10 @@ el.attributes({
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| attributes | Object | A key value pair list of attributes and their values. |
 
+| Argument   | Type   | Description                                           |
+| ---------- | ------ | ----------------------------------------------------- |
+| attributes | Object | A key value pair list of attributes and their values. |
 
 ---
 
@@ -100,13 +107,15 @@ el.attributes({
 
 Sets inline styles on the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.styles(styles)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.styles({
     width: '150px',
     background: '#CCC',
@@ -115,9 +124,10 @@ el.styles({
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| styles | Object | A key value pair list of styles and their values. |
+
+| Argument | Type   | Description                                       |
+| -------- | ------ | ------------------------------------------------- |
+| styles   | Object | A key value pair list of styles and their values. |
 
 ---
 
@@ -125,13 +135,15 @@ el.styles({
 
 Sets event handlers on the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.events(events)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.events({
     click: () => console.log('Clicked'),
     focus: () => console.log('Focused'),
@@ -140,9 +152,10 @@ el.events({
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| events | Object | A key value pair list of events and their handlers. |
+
+| Argument | Type   | Description                                         |
+| -------- | ------ | --------------------------------------------------- |
+| events   | Object | A key value pair list of events and their handlers. |
 
 ---
 
@@ -150,13 +163,15 @@ el.events({
 
 Sets the content of the element.
 
-#### Syntax 
-```
+#### Syntax
+
+```js
 el.content(...content)
 ```
 
-### Examples
-```
+#### Examples
+
+```js
 el.content('Hello world!')
 el.content(anotherElement)
 el.content(el1, el2, el3)
@@ -164,12 +179,8 @@ el.content(el1, "A string!", el2)
 ```
 
 #### Arguments
-| Argument | Type | Description 
-| ------ | ------ | ------ |
-| content | String | A string to append to the inner text of the element. |
-| content | Element | An element to append as a child of the element. |
 
-
-
-
-
+| Argument | Type    | Description                                          |
+| -------- | ------- | ---------------------------------------------------- |
+| content  | String  | A string to append to the inner text of the element. |
+| content  | Element | An element to append as a child of the element.      |
