@@ -40,16 +40,14 @@ const testStrings = [
 test('El : Creates element', () => {
 	testTags.forEach((tag) => {
 		const element = document.createElement(tag)
-		expect(new El(tag).done()).toMatchObject(element)
+		expect(new El(tag).node).toMatchObject(element)
 	})
 })
 
 test('El : Sets Id', () => {
 	testTags.forEach((tag) => {
 		testStrings.forEach((testString) => {
-			expect(new El(tag).id(testString.test).done().id).toEqual(
-				testString.result
-			)
+			expect(new El(tag).id(testString.test).node.id).toEqual(testString.result)
 		})
 	})
 })
@@ -57,7 +55,7 @@ test('El : Sets Id', () => {
 test('El : Sets Classes', () => {
 	testTags.forEach((tag) => {
 		testStrings.forEach((testString) => {
-			// expect(new El(tag).id(testString.test).done().id).toEqual(
+			// expect(new El(tag).id(testString.test).node.id).toEqual(
 			// 	testString.result
 			// )
 		})
