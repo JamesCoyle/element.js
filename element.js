@@ -1,6 +1,6 @@
 export default class El {
 	constructor(tag = 'div', options = null) {
-		this.el = document.createElement(tag, options)
+		this.node = document.createElement(tag, options)
 	}
 	/**
 	 * Sets the id property of the element
@@ -12,7 +12,7 @@ export default class El {
 	id(id) {
 		if (!id) return this
 
-		this.el.id = id.toString()
+		this.node.id = id.toString()
 
 		return this
 	}
@@ -25,7 +25,7 @@ export default class El {
 	 * @memberof El
 	 */
 	classes(...classes) {
-		this.el.classList.add(...classes)
+		this.node.classList.add(...classes)
 
 		return this
 	}
@@ -43,16 +43,16 @@ export default class El {
 
 			switch (typeof value) {
 				case 'string':
-					this.el.setAttribute(attr, value)
+					this.node.setAttribute(attr, value)
 					break
 
 				case 'number':
 				case 'object':
-					this.el.setAttribute(attr, value.toString())
+					this.node.setAttribute(attr, value.toString())
 					break
 
 				case 'boolean':
-					if (value) this.el.setAttribute(attr, '')
+					if (value) this.node.setAttribute(attr, '')
 					break
 			}
 		}
@@ -68,7 +68,7 @@ export default class El {
 	 * @memberof El
 	 */
 	styles(styles) {
-		Object.assign(this.el.style, styles)
+		Object.assign(this.node.style, styles)
 
 		return this
 	}
@@ -82,7 +82,7 @@ export default class El {
 	 */
 	events(events) {
 		for (let event in events) {
-			this.el.addEventListener(event, events[event])
+			this.node.addEventListener(event, events[event])
 		}
 
 		return this
@@ -99,12 +99,14 @@ export default class El {
 		content.forEach((item) => {
 			switch (typeof item) {
 				case 'object':
-					if (item instanceof Node) this.el.appendChild(item)
+					if (item instanceof Node) this.node.appendChild(item)
+					if (item instanceof El) this.node.appendChild(item.node)
 					else if (Array.isArray(item)) this.content(item)
 					break
 
 				case 'string':
-					this.el.appendChild(document.createTextNode(item))
+				case 'number':
+					this.node.appendChild(document.createTextNode(item.toString()))
 					break
 			}
 		})
