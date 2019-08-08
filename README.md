@@ -17,9 +17,9 @@ let textInput = new El('input')
     .events({
         input: (e) => console.log(e.target.value),
         focus: (e) => console.log("Element focused"),
-    }).node
+    })
 
-document.body.appendChild(textInput)
+document.body.appendChild(textInput.node)
 ```
 
 ## Methods
