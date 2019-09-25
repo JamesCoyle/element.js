@@ -1,4 +1,4 @@
-import El from '../element'
+import El from '../lib/element'
 
 const testTags = ['div', 'span', 'img', 'a', 'button', 'input']
 
