@@ -1,5 +1,5 @@
 {
-	"name": "element-js",
+	"name": "@jamescoyle/element",
 	"version": "1.0.0",
 	"description": "Easy DOM element creation.",
 	"main": "element.js",
