@@ -1,6 +1,6 @@
 {
 	"name": "@jamescoyle/element",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Easy DOM element creation.",
 	"main": "lib/element.js",
 	"repository": "https://gitlab.com/jamescoyle95/element-js.git",
