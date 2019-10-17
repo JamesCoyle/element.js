@@ -1,11 +1,11 @@
 {
 	"name": "@jamescoyle/element",
-	"version": "1.0.2",
+	"version": "2.0.0",
 	"description": "Easy DOM element creation.",
 	"main": "lib/element.js",
 	"repository": "https://gitlab.com/jamescoyle95/element-js.git",
 	"author": "James Coyle <jamesrichardcoyle@gmail.com>",
-	"license": "MIT",
+	"license": "SEE LICENSE IN LICENSE",
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.2.3",
