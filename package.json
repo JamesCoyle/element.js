@@ -1,8 +1,8 @@
 {
 	"name": "@jamescoyle/element",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Easy DOM element creation.",
-	"main": "element.js",
+	"main": "lib/element.js",
 	"repository": "https://gitlab.com/jamescoyle95/element-js.git",
 	"author": "James Coyle <jamesrichardcoyle@gmail.com>",
 	"license": "MIT",
