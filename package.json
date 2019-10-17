@@ -5,7 +5,7 @@
 	"main": "lib/element.js",
 	"repository": "https://gitlab.com/jamescoyle95/element-js.git",
 	"author": "James Coyle <jamesrichardcoyle@gmail.com>",
-	"license": "MIT",
+	"license": "SEE LICENSE IN LICENSE",
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.2.3",
